@@ -1,4 +1,4 @@
-import { Pages, Routes } from "@/components/constants/enums";
+import { Pages, Routes } from "@/constants/enums";
 
 const links = [
   { id: crypto.randomUUID(), title: "Menu", href: `/${Routes.MENU}` },
