@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
 "use client";
 import { Button } from "@/components/ui/button";
 import {
@@ -11,10 +10,11 @@ import {
   DialogTrigger,
 } from "@/components/ui/dialog";
 import { Label } from "@/components/ui/label";
+import { ProductWithRelations } from "@/types/product";
 import Image from "next/image";
-import PickSize from "./PickSize";
 import Extras from "./Extras";
-const AddToCart = ({ item }: { item: any }) => {
+import PickSize from "./PickSize";
+const AddToCart = ({ item }: { item: ProductWithRelations }) => {
   return (
     <Dialog>
       <DialogTrigger asChild>
@@ -43,7 +43,9 @@ const AddToCart = ({ item }: { item: any }) => {
           </div>
         </div>
         <DialogFooter>
-          <Button type="submit" className="w-full h-10">Add To Cart</Button>
+          <Button type="submit" className="w-full h-10">
+            Add To Cart
+          </Button>
         </DialogFooter>
       </DialogContent>
     </Dialog>

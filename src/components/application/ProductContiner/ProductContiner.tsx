@@ -1,11 +1,11 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
-import Product from "../Product/Product";
+import { ProductWithRelations } from "@/types/product";
+import CardProduct from "../CardProduct/CardProduct";
 
-const ProductContiner = ({ items }: { items: any }) => {
+const ProductContiner = ({ items }: { items: ProductWithRelations[] }) => {
   return (
     <ul className="grid grid-cols-1 sm:grid-cols-3 gap-4">
-      {items.map((item: any) => (
-        <Product key={item.id} item={item} />
+      {items.map((item) => (
+        <CardProduct key={item.id} item={item} />
       ))}
     </ul>
   );

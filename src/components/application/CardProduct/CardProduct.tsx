@@ -1,12 +1,12 @@
 import { formatCurrency } from "@/lib/formatters";
+import { ProductWithRelations } from "@/types/product";
 import Image from "next/image";
 import AddToCart from "../AddToCart/AddToCart";
 
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
-const Product = ({ item, key }: { item: any; key: number }) => {
+const CardProduct = ({ item }: { item: ProductWithRelations }) => {
   return (
     <>
-      <li key={key}>
+      <li key={item.id}>
         <div className="relative w-48 h-48 mx-auto">
           <Image
             src={item.image}
@@ -32,4 +32,4 @@ const Product = ({ item, key }: { item: any; key: number }) => {
   );
 };
 
-export default Product;
+export default CardProduct;

@@ -1,3 +1,12 @@
+-- CreateEnum
+CREATE TYPE "ProductSizes" AS ENUM ('SMALL', 'MEDIUM', 'LARGE');
+
+-- CreateEnum
+CREATE TYPE "ExtraIngredients" AS ENUM ('CHEESE', 'BACON', 'TOMATO', 'ONION', 'PEPPER');
+
+-- CreateEnum
+CREATE TYPE "UserRole" AS ENUM ('USER', 'ADMIN');
+
 -- CreateTable
 CREATE TABLE "Product" (
     "id" TEXT NOT NULL,
@@ -8,7 +17,6 @@ CREATE TABLE "Product" (
     "basePrice" DOUBLE PRECISION NOT NULL,
     "createdAt" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
     "updatedAt" TIMESTAMP(3) NOT NULL,
-    "categoryId" TEXT NOT NULL,
 
     CONSTRAINT "Product_pkey" PRIMARY KEY ("id")
 );

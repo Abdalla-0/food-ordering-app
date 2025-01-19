@@ -1,10 +1,8 @@
-import { db } from "@/lib/prisma";
 import BestSellers from "./BestSellers";
 import Hero from "./Hero";
 
-export default async function Home() {
-  const products = await db.product.findMany();
-  console.log(products);
+export default function Home() {
+
 
   return (
     <main>
