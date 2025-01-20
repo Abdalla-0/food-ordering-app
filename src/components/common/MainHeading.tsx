@@ -4,7 +4,7 @@ const MainHeading = ({
   className,
 }: {
   title: string;
-  subTitle: string;
+  subTitle?: string;
   className?: string;
 }) => {
   return (

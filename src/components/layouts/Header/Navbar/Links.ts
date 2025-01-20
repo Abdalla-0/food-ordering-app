@@ -1,7 +1,7 @@
 import { Pages, Routes } from "@/constants/enums";
 
 const links = [
-  { id: crypto.randomUUID(), title: "Menu", href: `/${Routes.MENU}` },
+  { id: crypto.randomUUID(), title: "Categories", href: `/${Routes.CATEGORIES}` },
   { id: crypto.randomUUID(), title: "About", href: `/${Routes.ABOUT}` },
   { id: crypto.randomUUID(), title: "Contact", href: `/${Routes.CONTACT}` },
   {

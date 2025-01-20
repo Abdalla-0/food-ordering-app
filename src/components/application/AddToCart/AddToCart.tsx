@@ -39,7 +39,7 @@ const AddToCart = ({ item }: { item: ProductWithRelations }) => {
           </div>
           <div className="space-y-4 text-center">
             <Label htmlFor="add-extras">Any Extras?</Label>
-            <Extras />
+            <Extras item={item}/>
           </div>
         </div>
         <DialogFooter>
