@@ -1,7 +1,17 @@
 import { ProductWithRelations } from "@/types/product";
 import CardProduct from "../CardProduct/CardProduct";
+import getTrans from "@/lib/translation";
+import { getCurrentLocale } from "@/lib/getCurrentLocale";
 
-const ProductContiner = ({ items }: { items: ProductWithRelations[] }) => {
+const ProductContiner = async ({
+  items,
+}: {
+  items: ProductWithRelations[];
+}) => {
+
+  const locale = await getCurrentLocale();
+  const { noProductsFound } = await getTrans(locale);
+  
   return items.length > 0 ? (
     <ul className="grid grid-cols-1 sm:grid-cols-3 gap-4">
       {items.map((item) => (
@@ -9,7 +19,7 @@ const ProductContiner = ({ items }: { items: ProductWithRelations[] }) => {
       ))}
     </ul>
   ) : (
-    <p className="text-center text-accent">No Products Found</p>
+    <p className="text-center text-accent">{noProductsFound}</p>
   );
 };
 

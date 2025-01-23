@@ -1,11 +1,39 @@
 "use client";
 import Link from "@/components/common/Link";
-import links from "./Links";
-import { Pages, Routes } from "@/constants/enums";
 import { Button, buttonVariants } from "@/components/ui/button";
-import { useState } from "react";
+import { Pages, Routes } from "@/constants/enums";
 import { Menu, XIcon } from "lucide-react";
-const Navbar = () => {
+import { useParams, usePathname } from "next/navigation";
+import { useState } from "react";
+const Navbar = ({
+  translation,
+}: {
+  translation: { [key: string]: string };
+}) => {
+  const links = [
+    {
+      id: crypto.randomUUID(),
+      title: translation.categories,
+      href: `/${Routes.CATEGORIES}`,
+    },
+    {
+      id: crypto.randomUUID(),
+      title: translation.about,
+      href: `/${Routes.ABOUT}`,
+    },
+    {
+      id: crypto.randomUUID(),
+      title: translation.contact,
+      href: `/${Routes.CONTACT}`,
+    },
+    {
+      id: crypto.randomUUID(),
+      title: "Login",
+      href: `${Routes.AUTH}/${Pages.LOGIN}`,
+    },
+  ];
+  const { locale } = useParams();
+  const pathname = usePathname();
   const [openMenu, setOpenMenu] = useState(false);
   return (
     <nav className="flex flex-1 justify-end">
@@ -33,11 +61,15 @@ const Navbar = () => {
         {links.map((link) => (
           <li key={link.id}>
             <Link
-              href={link.href}
+              href={`/${locale}${link.href}`}
               className={`font-semibold ${
+                pathname.startsWith(`/${locale}${link.href}`)
+                  ? "text-primary"
+                  : "text-accent"
+              } ${
                 link.href === `${Routes.AUTH}/${Pages.LOGIN}`
                   ? `${buttonVariants({ size: "lg" })} !px-8 !rounded-full`
-                  : `text-accent hover:text-primary duration-200 transition-colors`
+                  : `hover:text-primary duration-200 transition-colors`
               }  `}
             >
               {link.title}
