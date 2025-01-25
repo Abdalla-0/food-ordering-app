@@ -4,23 +4,33 @@ import getTrans from "@/lib/translation";
 import CartButton from "./HeaderEnd/CartButton";
 import LangToggler from "./HeaderEnd/LangToggler";
 import Navbar from "./Navbar/Navbar";
+import AuthButtons from "./AuthButtons/AuthButtons";
+import { getServerSession } from "next-auth";
+import { authOptions } from "@/server/auth";
 
 const Header = async () => {
+  const initialSession = await getServerSession(authOptions);
   const locale = await getCurrentLocale();
-  const { logo, navbar } = await getTrans(locale);
+  const translations = await getTrans(locale);
   return (
     <header className="py-5">
       <div className="container">
-        <div className="flex items-center justify-between">
+        <div className="flex items-center justify-between gap-6 lg:gap-10">
           <Link
             href={`/${locale}`}
             className="text-primary font-semibold text-2xl"
           >
-            🍕 {logo}
+            🍕 {translations.logo}
           </Link>
-          <Navbar translation={navbar} />
-          <div className="flex gap-6 items-center ms-8">
-            <CartButton />
+          <Navbar translations={translations} initialSession={initialSession}/>
+          <div className="flex items-center gap-6 flex-1 justify-end">
+            <div className="hidden lg:flex lg:items-center lg:gap-6">
+              <AuthButtons
+                translations={translations}
+                initialSession={initialSession}
+              />
+              <CartButton />
+            </div>
             <LangToggler />
           </div>
         </div>
