@@ -15,6 +15,7 @@ import Image from "next/image";
 import { useActionState, useEffect, useState } from "react";
 import { updateProfile } from "./_actions/profile";
 import UploadImage from "./UploadImage";
+import { toast } from "@/hooks/use-toast";
 
 const EditUserForm = ({
   user,
@@ -58,6 +59,15 @@ const EditUserForm = ({
     slug: Routes.PROFILE,
     translations,
   });
+
+  useEffect(() => {
+    if (state.message && state.status && !pending) {
+      toast({
+        title: state.message,
+        className: state.status === 200 ? "text-green-400" : "text-destructive",
+      });
+    }
+  }, [pending, state.message, state.status]);
 
   useEffect(() => {
     setSelectedImage(user.image as string);
