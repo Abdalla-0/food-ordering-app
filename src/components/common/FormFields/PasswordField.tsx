@@ -1,7 +1,7 @@
 import { IFormField } from "@/types/app";
 import { useState } from "react";
 import { EyeIcon, EyeOffIcon } from "lucide-react";
-import { ValidationErrors } from "@/validation/auth";
+import { ValidationErrors } from "@/validations/auth";
 import { useParams } from "next/navigation";
 import { Languages } from "@/constants/enums";
 import { Label } from "@/components/ui/label";

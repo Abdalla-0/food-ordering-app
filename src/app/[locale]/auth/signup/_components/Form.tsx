@@ -8,7 +8,7 @@ import useFormFields from "@/hooks/useFormFields";
 import { signup } from "@/server/_actions/auth";
 import { IFormField } from "@/types/app";
 import { Translations } from "@/types/translations";
-import { ValidationErrors } from "@/validation/auth";
+import { ValidationErrors } from "@/validations/auth";
 import { useParams, useRouter } from "next/navigation";
 import { useActionState, useEffect } from "react";
 const Form = ({ translations }: { translations: Translations }) => {

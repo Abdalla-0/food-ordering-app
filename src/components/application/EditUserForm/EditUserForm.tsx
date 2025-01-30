@@ -7,7 +7,7 @@ import { InputTypes, Routes } from "@/constants/enums";
 import useFormFields from "@/hooks/useFormFields";
 import { IFormField } from "@/types/app";
 import { Translations } from "@/types/translations";
-import { ValidationErrors } from "@/validation/auth";
+import { ValidationErrors } from "@/validations/auth";
 import { UserRole } from "@prisma/client";
 import { Session } from "next-auth";
 import { useSession } from "next-auth/react";

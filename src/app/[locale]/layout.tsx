@@ -6,7 +6,7 @@ import { Locale } from "@/i18n.config";
 import ReduxProvider from "@/providers/ReduxProvider";
 import type { Metadata } from "next";
 import { Cairo, Roboto } from "next/font/google";
-import "./styles/globals.css";
+import "@/styles/globals.css"
 import NextAuthSessionProvider from "@/providers/NextAuthSessionProvider";
 
 export async function generateStaticParams() {

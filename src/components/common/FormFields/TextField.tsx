@@ -1,7 +1,7 @@
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { IFormField } from "@/types/app";
-import { ValidationErrors } from "@/validation/auth";
+import { ValidationErrors } from "@/validations/auth";
 
 interface Props extends IFormField {
   error: ValidationErrors;

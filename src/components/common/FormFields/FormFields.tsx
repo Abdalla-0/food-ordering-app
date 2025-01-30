@@ -3,7 +3,7 @@ import TextField from "./TextField";
 import PasswordField from "./PasswordField";
 import { IFormField } from "@/types/app";
 import Checkbox from "./Checkbox";
-import { ValidationErrors } from "@/validation/auth";
+import { ValidationErrors } from "@/validations/auth";
 
 interface Props extends IFormField {
   error: ValidationErrors;

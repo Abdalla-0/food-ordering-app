@@ -3,7 +3,7 @@ import { Pages, Routes } from "@/constants/enums";
 import { getCurrentLocale } from "@/lib/getCurrentLocale";
 import { db } from "@/lib/prisma";
 import getTrans from "@/lib/translation";
-import { updateProfileSchema } from "@/validation/profile";
+import { updateProfileSchema } from "@/validations/profile";
 import { UserRole } from "@prisma/client";
 import { revalidatePath } from "next/cache";
 

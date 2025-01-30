@@ -4,7 +4,7 @@ import { Locale } from "@/i18n.config";
 import { getCurrentLocale } from "@/lib/getCurrentLocale";
 import { db } from "@/lib/prisma";
 import getTrans from "@/lib/translation";
-import { loginSchema, signUpSchema } from "@/validation/auth";
+import { loginSchema, signUpSchema } from "@/validations/auth";
 import bcrypt from "bcrypt";
 export const login = async (credentials: Record<"email" | "password", string> | undefined, locale: Locale) => {
 
