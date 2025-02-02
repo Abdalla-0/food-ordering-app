@@ -21,7 +21,9 @@ const FormFields = (props: Props) => {
     }
 
     if (type === InputTypes.CHECKBOX) {
-      return <Checkbox {...props} />;
+      return <Checkbox label={props.label ?? " "} checked={props.checked ?? false} {...props} />;
+
+
     }
 
     return <TextField {...props} />;
