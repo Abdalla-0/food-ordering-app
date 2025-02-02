@@ -8,8 +8,7 @@ interface CartState {
     items: CartItem[]
 }
 
-const initialCartItems =
-    typeof window !== "undefined" ? localStorage.getItem("cartItems") : null;
+const initialCartItems = localStorage.getItem("cartItems");
 
 const initialState: CartState = {
     items: initialCartItems ? JSON.parse(initialCartItems) : [],
