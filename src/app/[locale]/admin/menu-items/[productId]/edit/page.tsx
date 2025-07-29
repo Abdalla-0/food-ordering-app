@@ -1,4 +1,4 @@
-import { Pages, Routes } from "@/constants/enums";
+import { Languages, Pages, Routes } from "@/constants/enums";
 import { Locale } from "@/i18n.config";
 import { getProduct, getProducts } from "@/server/db/products";
 import { redirect } from "next/navigation";
@@ -6,11 +6,23 @@ import Form from "../../_components/Form";
 import { getCategories } from "@/server/db/categories";
 import getTrans from "@/lib/translation";
 
+// export async function generateStaticParams() {
+//   const products = await getProducts();
+
+//   return products.map((product) => ({ productId: product.id }));
+// }
+
 export async function generateStaticParams() {
   const products = await getProducts();
 
-  return products.map((product) => ({ productId: product.id }));
+  return products.flatMap((product) =>
+    [Languages.ENGLISH, Languages.ARABIC].map((locale) => ({
+      locale,
+      productId: product.id,
+    }))
+  );
 }
+
 async function EditProductPage({
   params,
 }: {

@@ -1,4 +1,3 @@
-/* eslint-disable react/no-children-prop */
 import Footer from "@/components/layouts/Footer/Footer";
 import Header from "@/components/layouts/Header/Header";
 import { Toaster } from "@/components/ui/toaster";
@@ -37,9 +36,9 @@ export default async function RootLayout({
   params,
 }: Readonly<{
   children: React.ReactNode;
-  params: Promise<{ locale: Locale }>;
+  params: { locale: Locale };
 }>) {
-  const locale = (await params).locale;
+  const { locale } = await params;
   return (
     <html
       lang={locale}
@@ -52,11 +51,12 @@ export default async function RootLayout({
       >
         <NextAuthSessionProvider>
           <ReduxProvider>
-            <CartInitProvider children={undefined} />
-            <Header />
-            {children}
-            <Footer />
-            <Toaster />
+            <CartInitProvider>
+              <Header />
+              {children}
+              <Footer />
+              <Toaster />
+            </CartInitProvider>
           </ReduxProvider>
         </NextAuthSessionProvider>
       </body>

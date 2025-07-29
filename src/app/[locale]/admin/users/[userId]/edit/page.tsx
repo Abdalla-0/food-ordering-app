@@ -1,14 +1,25 @@
 import EditUserForm from "@/components/application/EditUserForm/EditUserForm";
-import { Pages, Routes } from "@/constants/enums";
+import { Languages, Pages, Routes } from "@/constants/enums";
 import { Locale } from "@/i18n.config";
 import getTrans from "@/lib/translation";
 import { getUser, getUsers } from "@/server/db/users";
 import { redirect } from "next/navigation";
 
+// export async function generateStaticParams() {
+//   const users = await getUsers();
+
+//   return users.map((user) => ({ userId: user.id }));
+// }
+
 export async function generateStaticParams() {
   const users = await getUsers();
 
-  return users.map((user) => ({ userId: user.id }));
+  return users.flatMap((user) =>
+    [Languages.ARABIC, Languages.ENGLISH].map((locale) => ({
+      locale,
+      userId: user.id,
+    }))
+  );
 }
 
 async function EditUserPage({
