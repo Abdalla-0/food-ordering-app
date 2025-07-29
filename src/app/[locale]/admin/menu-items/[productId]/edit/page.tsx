@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 import { Languages, Pages, Routes } from "@/constants/enums";
 import { Locale } from "@/i18n.config";
 import { getProduct, getProducts } from "@/server/db/products";

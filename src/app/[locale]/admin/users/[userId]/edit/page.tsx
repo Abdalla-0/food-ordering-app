@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 import EditUserForm from "@/components/application/EditUserForm/EditUserForm";
 import { Languages, Pages, Routes } from "@/constants/enums";
 import { Locale } from "@/i18n.config";
