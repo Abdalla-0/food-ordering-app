@@ -6,7 +6,6 @@ import { useAppDispatch } from "@/store/hooks";
 import { CartItem } from "@/types/cart";
 import { Trash2 } from "lucide-react";
 import Image from "next/image";
-import { useEffect } from "react";
 
 interface CartItemsProps {
   cart: CartItem[];
@@ -15,10 +14,6 @@ interface CartItemsProps {
 const CartItems = ({ cart, totalAmount }: CartItemsProps) => {
   const dispatch = useAppDispatch();
   const subtotal = getCartSubtotal(cart);
-
-  useEffect(() => {
-    localStorage.setItem("cartItems", JSON.stringify(cart));
-  }, [cart]);
 
   return (
     <div>

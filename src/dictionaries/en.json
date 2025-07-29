@@ -11,6 +11,14 @@
       "checkOut": "check out",
       "OurBestSellers": "Our Best Sellers"
     },
+    "latestProducts": {
+      "checkOut": "check out",
+      "OurLatestProducts": "Our Latest Products"
+    },
+    "OffersOfTheWeek": {
+      "checkOut": "check out",
+      "OffersOfTheWeek": "Offers Of TheWeek"
+    },
     "about": {
       "ourStory": "Our story",
       "aboutUs": "About us",

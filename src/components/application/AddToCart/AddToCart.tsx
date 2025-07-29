@@ -71,7 +71,7 @@ const AddToCart = ({ item }: { item: ProductWithRelations }) => {
         <DialogHeader className="items-center">
           <Image src={item.image} alt={item.name} width={200} height={200} />
           <DialogTitle>{item.name}</DialogTitle>
-          <DialogDescription>{item.description}</DialogDescription>
+          <DialogDescription className="text-center">{item.description}</DialogDescription>
         </DialogHeader>
         <div className="space-y-10">
           <div className="space-y-4 text-center">

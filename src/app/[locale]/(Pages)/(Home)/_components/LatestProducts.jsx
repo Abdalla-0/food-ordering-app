@@ -4,21 +4,19 @@ import { getCurrentLocale } from "@/lib/getCurrentLocale";
 import getTrans from "@/lib/translation";
 import { getRandomProducts } from "@/server/db/products";
 
-const BestSellers = async () => {
-  
-  // const bestSellers = await getBestSellers(3);
+const LatestProducts = async () => {
   const randomProducts = await getRandomProducts(3);
 
   const locale = await getCurrentLocale();
-  const { bestSeller } = (await getTrans(locale)).home;
+  const { latestProducts } = (await getTrans(locale)).home;
 
   return (
-    <section>
+    <section className="section-gap">
       <div className="container">
         <MainHeading
           className="text-center mb-4"
-          subTitle={bestSeller.checkOut}
-          title={bestSeller.OurBestSellers}
+          subTitle={latestProducts.checkOut}
+          title={latestProducts.OurLatestProducts}
         />
         <ProductContiner items={randomProducts} />
       </div>
@@ -26,4 +24,4 @@ const BestSellers = async () => {
   );
 };
 
-export default BestSellers;
+export default LatestProducts;

@@ -11,6 +11,14 @@
       "checkOut": "اكتشف",
       "OurBestSellers": "أفضل مبيعاتنا"
     },
+    "latestProducts": {
+      "checkOut": "اكتشف",
+      "OurLatestProducts": "أحدث منتجاتنا"
+    },
+    "OffersOfTheWeek": {
+      "checkOut": "اكتشف",
+      "OffersOfTheWeek": "عروض الأسبوع"
+    },
     "about": {
       "ourStory": "قصتنا",
       "aboutUs": "معلومات عنا",
