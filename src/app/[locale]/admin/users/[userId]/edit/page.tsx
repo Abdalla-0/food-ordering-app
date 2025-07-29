@@ -11,17 +11,18 @@ import { redirect } from "next/navigation";
 //   return users.map((user) => ({ userId: user.id }));
 // }
 
-export async function generateStaticParams() {
-  const users = await getUsers();
+// export async function generateStaticParams() {
+//   const users = await getUsers();
 
-  return users.flatMap((user) =>
-    [Languages.ARABIC, Languages.ENGLISH].map((locale) => ({
-      locale,
-      userId: user.id,
-    }))
-  );
-}
+//   return users.flatMap((user) =>
+//     [Languages.ARABIC, Languages.ENGLISH].map((locale) => ({
+//       locale,
+//       userId: user.id,
+//     }))
+//   );
+// }
 
+export const dynamic = "force-dynamic";
 async function EditUserPage({
   params,
 }: {
