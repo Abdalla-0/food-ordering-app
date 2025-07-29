@@ -1,10 +1,16 @@
 {
-    "builds": [
-      {
-        "src": "package.json",
-        "use": "@vercel/node"
-      }
-    ],
-    "buildCommand": "yarn install && yarn prisma-generate && yarn build"
-  }
-  
+  "builds": [
+    {
+      "src": "package.json",
+      "use": "@vercel/node"
+    }
+  ],
+  "redirects": [
+    {
+      "source": "/",
+      "destination": "/en",
+      "permanent": true
+    }
+  ],
+  "buildCommand": "yarn install && yarn prisma-generate && yarn build"
+}
