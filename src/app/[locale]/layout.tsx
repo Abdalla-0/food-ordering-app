@@ -10,9 +10,9 @@ import "@/styles/globals.css";
 import NextAuthSessionProvider from "@/providers/NextAuthSessionProvider";
 import CartInitProvider from "@/hooks/CartInitProvider";
 
-// export async function generateStaticParams() {
-//   return [{ locale: Languages.ARABIC }, { locale: Languages.ENGLISH }];
-// }
+export async function generateStaticParams() {
+  return [{ locale: Languages.ARABIC }, { locale: Languages.ENGLISH }];
+}
 
 const roboto = Roboto({
   subsets: ["latin"],
@@ -36,9 +36,9 @@ export default async function RootLayout({
   params,
 }: Readonly<{
   children: React.ReactNode;
-  params: { locale: Locale };
+  params: Promise<{ locale: Locale }>;
 }>) {
-  const { locale } = await params;
+  const locale = (await params).locale;
   return (
     <html
       lang={locale}
