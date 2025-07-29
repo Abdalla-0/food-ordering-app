@@ -44,7 +44,7 @@ export default withAuth(
         if (pathnameIsMissingLocale) {
             const locale = getLocale(request);
             return NextResponse.redirect(
-                new URL(`/${locale}${pathname}`, request.url)
+                new URL(`/en${pathname}`, request.url)
             );
         }
         const currentLocale = request.url.split("/")[3] as Locale;

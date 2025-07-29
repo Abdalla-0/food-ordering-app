@@ -10,9 +10,9 @@ import "@/styles/globals.css";
 import NextAuthSessionProvider from "@/providers/NextAuthSessionProvider";
 import CartInitProvider from "@/hooks/CartInitProvider";
 
-export async function generateStaticParams() {
-  return [{ locale: Languages.ARABIC }, { locale: Languages.ENGLISH }];
-}
+// export async function generateStaticParams() {
+//   return [{ locale: Languages.ARABIC }, { locale: Languages.ENGLISH }];
+// }
 
 const roboto = Roboto({
   subsets: ["latin"],

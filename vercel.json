@@ -5,12 +5,6 @@
       "use": "@vercel/node"
     }
   ],
-  "redirects": [
-    {
-      "source": "/",
-      "destination": "/en",
-      "permanent": true
-    }
-  ],
+
   "buildCommand": "yarn install && yarn prisma-generate && yarn build"
 }

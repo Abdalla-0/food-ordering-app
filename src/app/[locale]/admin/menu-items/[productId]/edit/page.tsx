@@ -12,16 +12,18 @@ import getTrans from "@/lib/translation";
 //   return products.map((product) => ({ productId: product.id }));
 // }
 
-export async function generateStaticParams() {
-  const products = await getProducts();
+// export async function generateStaticParams() {
+//   const products = await getProducts();
 
-  return products.flatMap((product) =>
-    [Languages.ENGLISH, Languages.ARABIC].map((locale) => ({
-      locale,
-      productId: product.id,
-    }))
-  );
-}
+//   return products.flatMap((product) =>
+//     [Languages.ENGLISH, Languages.ARABIC].map((locale) => ({
+//       locale,
+//       productId: product.id,
+//     }))
+//   );
+// }
+
+export const dynamic = "force-dynamic";
 
 async function EditProductPage({
   params,
