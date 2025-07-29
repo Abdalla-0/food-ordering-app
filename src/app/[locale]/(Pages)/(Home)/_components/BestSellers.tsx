@@ -2,12 +2,11 @@ import ProductContiner from "@/components/application/ProductContiner/ProductCon
 import MainHeading from "@/components/common/MainHeading";
 import { getCurrentLocale } from "@/lib/getCurrentLocale";
 import getTrans from "@/lib/translation";
-import { getRandomProducts } from "@/server/db/products";
+import { getFakeBestSellers, } from "@/server/db/products";
 
 const BestSellers = async () => {
-  
   // const bestSellers = await getBestSellers(3);
-  const randomProducts = await getRandomProducts(3);
+  const fakeBestSellers = await getFakeBestSellers();
 
   const locale = await getCurrentLocale();
   const { bestSeller } = (await getTrans(locale)).home;
@@ -20,7 +19,7 @@ const BestSellers = async () => {
           subTitle={bestSeller.checkOut}
           title={bestSeller.OurBestSellers}
         />
-        <ProductContiner items={randomProducts} />
+        <ProductContiner items={fakeBestSellers} />
       </div>
     </section>
   );

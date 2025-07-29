@@ -8,14 +8,11 @@ interface CartState {
     items: CartItem[]
 }
 
-const isClient = typeof window !== 'undefined';
-
-const initialCartItems = isClient ? localStorage.getItem("cartItems") : null;
+const initialCartItems = localStorage.getItem("cartItems");
 
 const initialState: CartState = {
     items: initialCartItems ? JSON.parse(initialCartItems) : [],
 }
-
 
 const cartSlice = createSlice({
     name: "cart",
@@ -30,9 +27,7 @@ const cartSlice = createSlice({
             } else {
                 state.items = [...state.items, { ...action.payload, quantity: 1 }]
             }
-            if (isClient) {
-                localStorage.setItem("cartItems", JSON.stringify(state.items));
-            }
+            localStorage.setItem("cartItems", JSON.stringify(state.items));
         },
         actionRemoveCartItem: (state, action: PayloadAction<{ id: string }>) => {
             const item = state.items.find((item) => item.id === action.payload.id)
@@ -42,22 +37,16 @@ const cartSlice = createSlice({
                 } else {
                     item.quantity! -= 1
                 }
-                if (isClient) {
-                    localStorage.setItem("cartItems", JSON.stringify(state.items));
-                }
+                localStorage.setItem("cartItems", JSON.stringify(state.items));
             }
         },
         actionRemoveFromCart: (state, action: PayloadAction<{ id: string }>) => {
             state.items = state.items.filter((item) => item.id !== action.payload.id);
-            if (isClient) {
-                localStorage.setItem("cartItems", JSON.stringify(state.items));
-            }
+            localStorage.setItem("cartItems", JSON.stringify(state.items));
         },
         actionClearCart: (state) => {
             state.items = [];
-            if (isClient) {
-                localStorage.removeItem("cartItems");
-            }
+            localStorage.removeItem("cartItems");
         }
     }
 })

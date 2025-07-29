@@ -72,10 +72,10 @@ export const getProduct = cache(
   { revalidate: 3600 }
 );
 
-// Fake Random Products For Sections 
+// Fake Fake Products For Home Page Sections 
 
-export const getRandomProducts = async (
-  limit: number = 3
+export const getFakeBestSellers = async (
+
 ) => {
   const products = await db.product.findMany({
     include: {
@@ -84,9 +84,29 @@ export const getRandomProducts = async (
     },
   });
 
+  return products.slice(0, 3);
+};
+export const getFakeLatestProducts = async (
 
-  const shuffled = [...products].sort(() => 0.5 - Math.random());
+) => {
+  const products = await db.product.findMany({
+    include: {
+      sizes: true,
+      extras: true,
+    },
+  });
 
+  return products.slice(3, 6);
+};
+export const getFakeOffersOfTheWeek = async (
 
-  return shuffled.slice(0, limit);
+) => {
+  const products = await db.product.findMany({
+    include: {
+      sizes: true,
+      extras: true,
+    },
+  });
+
+  return products.slice(6, 9);
 };
