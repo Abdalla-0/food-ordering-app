@@ -1,3 +1,4 @@
+/* eslint-disable react/no-children-prop */
 import Footer from "@/components/layouts/Footer/Footer";
 import Header from "@/components/layouts/Header/Header";
 import { Toaster } from "@/components/ui/toaster";
@@ -6,8 +7,9 @@ import { Locale } from "@/i18n.config";
 import ReduxProvider from "@/providers/ReduxProvider";
 import type { Metadata } from "next";
 import { Cairo, Roboto } from "next/font/google";
-import "@/styles/globals.css"
+import "@/styles/globals.css";
 import NextAuthSessionProvider from "@/providers/NextAuthSessionProvider";
+import CartInitProvider from "@/hooks/CartInitProvider";
 
 export async function generateStaticParams() {
   return [{ locale: Languages.ARABIC }, { locale: Languages.ENGLISH }];
@@ -50,6 +52,7 @@ export default async function RootLayout({
       >
         <NextAuthSessionProvider>
           <ReduxProvider>
+            <CartInitProvider children={undefined} />
             <Header />
             {children}
             <Footer />
