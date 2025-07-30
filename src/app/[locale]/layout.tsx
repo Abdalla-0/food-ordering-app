@@ -7,7 +7,7 @@ import ReduxProvider from "@/providers/ReduxProvider";
 import type { Metadata } from "next";
 import { Cairo, Roboto } from "next/font/google";
 import "@/styles/globals.css";
-// import NextAuthSessionProvider from "@/providers/NextAuthSessionProvider";
+import NextAuthSessionProvider from "@/providers/NextAuthSessionProvider";
 import CartInitProvider from "@/hooks/CartInitProvider";
 import { routing } from "@/i18n/routing";
 import { notFound } from "next/navigation";
@@ -62,7 +62,7 @@ export default async function RootLayout({
           locale === Languages.ARABIC ? cairo.className : roboto.className
         }
       >
-        {/* <NextAuthSessionProvider> */}
+        <NextAuthSessionProvider> 
           {/* <NextIntlClientProvider messages={messages}> */}
           <ReduxProvider>
             <CartInitProvider>
@@ -73,7 +73,7 @@ export default async function RootLayout({
             </CartInitProvider>
           </ReduxProvider>
           {/* </NextIntlClientProvider> */}
-        {/* </NextAuthSessionProvider> */}
+        </NextAuthSessionProvider> 
       </body>
     </html>
   );
