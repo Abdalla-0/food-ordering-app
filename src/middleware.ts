@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-unused-vars */
 import { match as matchLocale } from "@formatjs/intl-localematcher";
 import Negotiator from "negotiator";
 import { NextRequest, NextResponse } from "next/server";
@@ -45,7 +44,7 @@ export default withAuth(
         if (pathnameIsMissingLocale) {
             const locale = getLocale(request);
             return NextResponse.redirect(
-                new URL(`/en${pathname}`, request.url)
+                new URL(`/${locale}${pathname}`, request.url)
             );
         }
         const currentLocale = request.url.split("/")[3] as Locale;

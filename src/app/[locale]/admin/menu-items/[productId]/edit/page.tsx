@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-unused-vars */
 import { Languages, Pages, Routes } from "@/constants/enums";
 import { Locale } from "@/i18n.config";
 import { getProduct, getProducts } from "@/server/db/products";
@@ -13,18 +12,16 @@ import getTrans from "@/lib/translation";
 //   return products.map((product) => ({ productId: product.id }));
 // }
 
-// export async function generateStaticParams() {
-//   const products = await getProducts();
+export async function generateStaticParams() {
+  const products = await getProducts();
 
-//   return products.flatMap((product) =>
-//     [Languages.ENGLISH, Languages.ARABIC].map((locale) => ({
-//       locale,
-//       productId: product.id,
-//     }))
-//   );
-// }
-
-export const dynamic = "force-dynamic";
+  return products.flatMap((product) =>
+    [Languages.ENGLISH, Languages.ARABIC].map((locale) => ({
+      locale,
+      productId: product.id,
+    }))
+  );
+}
 
 async function EditProductPage({
   params,

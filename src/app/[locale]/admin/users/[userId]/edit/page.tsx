@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-unused-vars */
 import EditUserForm from "@/components/application/EditUserForm/EditUserForm";
 import { Languages, Pages, Routes } from "@/constants/enums";
 import { Locale } from "@/i18n.config";
@@ -12,18 +11,17 @@ import { redirect } from "next/navigation";
 //   return users.map((user) => ({ userId: user.id }));
 // }
 
-// export async function generateStaticParams() {
-//   const users = await getUsers();
+export async function generateStaticParams() {
+  const users = await getUsers();
 
-//   return users.flatMap((user) =>
-//     [Languages.ARABIC, Languages.ENGLISH].map((locale) => ({
-//       locale,
-//       userId: user.id,
-//     }))
-//   );
-// }
+  return users.flatMap((user) =>
+    [Languages.ARABIC, Languages.ENGLISH].map((locale) => ({
+      locale,
+      userId: user.id,
+    }))
+  );
+}
 
-export const dynamic = "force-dynamic";
 async function EditUserPage({
   params,
 }: {
