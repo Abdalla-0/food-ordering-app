@@ -118,7 +118,7 @@ export type Translations = {
         tabs: {
             profile: string;
             categories: string;
-            menuItems: string;
+            products: string;
             users: string;
             orders: string;
         };
@@ -136,7 +136,7 @@ export type Translations = {
         };
         "menu-items": {
             addItemSize: string;
-            createNewMenuItem: string;
+            createNewProduct: string;
             addExtraItem: string;
             menuOption: {
                 name: string;

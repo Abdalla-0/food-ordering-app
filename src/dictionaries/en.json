@@ -172,7 +172,7 @@
     "tabs": {
       "profile": "Profile",
       "categories": "Categories",
-      "menuItems": "Menu Items",
+      "products": "Products",
       "users": "Users",
       "orders": "Orders"
     },
@@ -189,7 +189,7 @@
       }
     },
     "menu-items": {
-      "createNewMenuItem": "Create new menu item",
+      "createNewProduct": "Create new product",
       "addItemSize": "Add item size",
       "addExtraItem": "Add extra item",
       "menuOption": {

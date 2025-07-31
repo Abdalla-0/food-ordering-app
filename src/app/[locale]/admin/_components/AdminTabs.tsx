@@ -23,7 +23,7 @@ function AdminTabs({ translations }: { translations: Translations }) {
     },
     {
       id: crypto.randomUUID(),
-      title: translations.admin.tabs.menuItems,
+      title: translations.admin.tabs.products,
       href: `${Routes.ADMIN}/${Pages.MENU_ITEMS}`,
     },
     {

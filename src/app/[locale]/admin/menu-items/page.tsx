@@ -39,7 +39,7 @@ async function MenuItemsPage({
               variant: "outline",
             })} !mx-auto !flex !w-80 !h-10 mb-8`}
           >
-            {translations.admin["menu-items"].createNewMenuItem}
+            {translations.admin["menu-items"].createNewProduct}
             <ArrowRightCircle
               className={`!w-5 !h-5 ${
                 locale === Languages.ARABIC ? "rotate-180 " : ""
