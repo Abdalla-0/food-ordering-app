@@ -5,6 +5,7 @@ import { ArrowRightCircle } from "lucide-react";
 import Image from "next/image";
 import { getCurrentLocale } from "@/lib/getCurrentLocale";
 import getTrans from "@/lib/translation";
+import pizzaImage from './../../../../../../public/assets/images/pizza.png';
 
 const Hero = async () => {
   const locale = await getCurrentLocale();
@@ -47,7 +48,7 @@ const Hero = async () => {
           </div>
           <div className="relative hidden md:block">
             <Image
-              src={"/assets/images/pizza.png"}
+              src={pizzaImage}
               alt="Hero pizza image"
               fill
               loading="eager"
