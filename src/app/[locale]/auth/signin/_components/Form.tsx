@@ -57,7 +57,7 @@ const Form = ({ translations }: { translations: Translations }) => {
           title: translations.messages.loginSuccessful,
           className: "text-green-400",
         });
-        router.replace(`/${locale}/${Routes.PROFILE}`);
+        router.push(`/${locale}/${Routes.PROFILE}`);
       }
     } catch (error) {
       console.log(error);
