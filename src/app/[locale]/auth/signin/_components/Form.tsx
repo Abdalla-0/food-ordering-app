@@ -52,12 +52,13 @@ const Form = ({ translations }: { translations: Translations }) => {
             className: "text-destructive",
           });
         }
-      } else {
+      }
+      if (res?.status === 200) {
         toast({
           title: translations.messages.loginSuccessful,
           className: "text-green-400",
         });
-        router.push(`/${locale}/${Routes.PROFILE}`);
+        router.replace(`/${locale}/${Routes.PROFILE}`);
       }
     } catch (error) {
       console.log(error);
