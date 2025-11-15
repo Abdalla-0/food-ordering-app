@@ -52,8 +52,7 @@ const Form = ({ translations }: { translations: Translations }) => {
             className: "text-destructive",
           });
         }
-      }
-      if (res?.ok) {
+      } else {
         toast({
           title: translations.messages.loginSuccessful,
           className: "text-green-400",
