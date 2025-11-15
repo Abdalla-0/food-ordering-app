@@ -8,6 +8,8 @@ import getTrans from "@/lib/translation";
 import { loginSchema, signUpSchema } from "@/validations/auth";
 import bcrypt from "bcrypt";
 import { revalidatePath } from "next/cache";
+
+
 export const login = async (credentials: Record<"email" | "password", string> | undefined, locale: Locale) => {
 
     const translations = await getTrans(locale);
