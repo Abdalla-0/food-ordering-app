@@ -59,6 +59,7 @@ const Form = ({ translations }: { translations: Translations }) => {
           className: "text-green-400",
         });
         router.replace(`/${locale}/${Routes.PROFILE}`);
+        console.log("RES", res);
       }
     } catch (error) {
       console.log(error);
