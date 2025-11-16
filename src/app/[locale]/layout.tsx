@@ -28,7 +28,8 @@ const cairo = Cairo({
 
 export const metadata: Metadata = {
   title: "Food Ordering App",
-  description: "A fast and modern food ordering platform with a smooth browsing",
+  description:
+    "A modern food ordering platform offering a seamless browsing experience, intuitive product management, and a smooth user journey from login to dashboard.",
 };
 
 export default async function RootLayout({
