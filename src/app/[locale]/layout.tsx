@@ -8,7 +8,6 @@ import type { Metadata } from "next";
 import { Cairo, Roboto } from "next/font/google";
 import NextAuthSessionProvider from "@/providers/NextAuthSessionProvider";
 import CartInitProvider from "@/hooks/CartInitProvider";
-// @ts-expect-error -- allow importing global css without type declarations
 import "@/styles/globals.css";
 export async function generateStaticParams() {
   return [{ locale: Languages.ARABIC }, { locale: Languages.ENGLISH }];
